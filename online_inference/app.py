@@ -64,9 +64,9 @@ def predict(request: InputData):
 
 @app.post('/will_it_rain')
 def will_it_rain(request: InputData):
-    prediction = predict(request)
+    predictions = predict(request)
 
-    return {"predicted_values": [int(p > 0.6) for p in prediction.predicted_values]}
+    return {"predicted_values": [int(p > 0.6) for p in predictions.predicted_values]}
 
 @app.get("/is_ready")
 def is_ready():
